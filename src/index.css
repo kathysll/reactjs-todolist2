@@ -1,3 +1,4 @@
+/* Global Sytles */
 * {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -6,6 +7,7 @@
   color: #202124;
 }
 
+/* Specific Font Sytles */
 h1,
 h2,
 h3,
@@ -14,6 +16,7 @@ button {
   font-family: 'Press Start 2P', system-ui;
 }
 
+/* Root Element */
 #root {
   min-height: 100vh;
   display: flex;
@@ -23,11 +26,13 @@ button {
   gap: 14px;
 }
 
+/* Header Styling */
 header {
   display: flex;
   align-items: stretch;
 }
 
+/* Center Content */
 header,
 .main {
   max-width: 800px;
@@ -36,6 +41,7 @@ header,
   gap: 14px;
 }
 
+/* Input Styling */
 header input {
   flex: 1;
   border-radius: 14px;
@@ -43,35 +49,39 @@ header input {
   width: 100%;
 }
 
+/* Button Styling */
 header button {
   border-radius: 14px;
   background: transparent;
   transition-duration: 200ms;
   cursor: pointer;
+  padding: none;
+  outline: none;
+  background: white;
 }
 
 header button:hover {
   opacity: 0.7;
 }
 
-header button,
-header input {
-  padding: 14px 18px;
-  border: none;
-  outline: none;
-  background: white;
+header button:focus,
+header input:focus {
+ outline: 2px solid #3b82f6; /* Blue focus outline for accessibility */
 }
 
+/* Paragraph Styling */
 p {
   font-size: 0.9em;
 }
 
+/* Main Content */
 .main {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+/* Todo Item Styling */
 .todoItem {
   display: flex;
   align-items: center;
@@ -85,6 +95,7 @@ p {
   flex: 1;
 }
 
+/* Actions Container */
 .actionsContainer {
   display: flex;
   align-items: center;
@@ -102,8 +113,11 @@ p {
   opacity: 0.7;
 }
 
+.actionsContainer button:focus{
+  outline: 2px solid #3b82f6; /* Blue focus outline for accessibility */
+}
 
-
+/* Responsive Styling */
 @media (min-width: 640px) {
 
   header button,

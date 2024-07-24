@@ -1,19 +1,25 @@
-import { useState } from "react"
+import React from "react"; 
+//import { useState } from "react";
 
-export default function TodoInput(props) {
-  const { handleAddTodos } = props
-
-  const [todoValue, setTodoValue] = useState('')
+export default function TodoInput({ handleAddTodos, todoValue, setTodoValue }) {
+  const handleAddClick = () =>{
+    if (todoValue.trim() === '') {
+      return;
+    }
+    handleAddTodos(todoValue);
+    setTodoValue('');
+    console.log('Todo added: ', todoValue); // Debugging log
+  };
 
   return (
     <header>
-      <input value={todoValue} onChange={(e) => {
-        setTodoValue(e.target.value)
-      }} placeholder="Enter todo ....." />
-      <button onClick={() => {
-        handleAddTodos(todoValue)
-        setTodoValue('')
-      }}>Add</button>
+      <input 
+        value={todoValue} 
+        onChange={(e) => setTodoValue(e.target.value)} 
+        placeholder="Enter todo ....."
+        aira-label="Todo Input"  
+      />
+      <button onClick={handleAddClick}>Add</button>
     </header>
-  )
+  );
 }
